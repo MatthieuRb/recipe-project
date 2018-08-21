@@ -1,5 +1,6 @@
 package com.matthieurb.recipeproject.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -11,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -35,10 +35,9 @@ public class Recipe {
 	private Difficulty difficulty;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
-	private Set<Ingredient> ingredients;
+	private Set<Ingredient> ingredients = new HashSet<Ingredient>();
 	
-	@Lob
-	private Byte[] image;
+	private String image;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Notes notes;
@@ -46,7 +45,7 @@ public class Recipe {
 	@ManyToMany
 	@JoinTable(name = "recipe_category", joinColumns = @JoinColumn(name= "recipe_id"), 
 	inverseJoinColumns = @JoinColumn(name ="category_id"))
-	private Set<Category> categories;
+	private Set<Category> categories = new HashSet<Category>();
 	
 	public Long getId() {
 		return id;
@@ -96,10 +95,10 @@ public class Recipe {
 	public void setDirection(String direction) {
 		this.direction = direction;
 	}
-	public Byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
-	public void setImage(Byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 	public Notes getNotes() {
