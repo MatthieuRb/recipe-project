@@ -1,62 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Recipe Home</title>
+    <meta charset="UTF-8"/>
+    <title>Recipe Home</title>
 </head>
 <body>
-<h1 th:text="'My Recipes'">My Recipes!</h1>
+<h1>My Recipes!</h1>
+
 <table>
-		<thead>
-			<tr>
-				<td style="width: 150px;">ID</td>
-				<td style="width: 150px;">Description</td>
-				<td style="width: 150px;">Preparation time</td>
-				<td style="width: 150px;">Cook time</td>
-				<td style="width: 150px;">Servings</td>
-				<td style="width: 150px;">Source</td>
-				<td style="width: 150px;">URL</td>
-				<td style="width: 150px;">Direction</td>
-				<td style="width: 150px;">Difficulty</td>
-				<td style="width: 315px;">Ingredients</td>
-				<td style="width: 150px;">Image</td>
-				<td style="width: 150px;">Notes</td>
-				<td style="width: 150px;">Categories</td>
-			</tr>
-		</thead>
-		<tbody>
-		<tr th:each="recipe: ${recipes}">
-			<td th:text="${recipe.id}">1L</td>
-			<td th:text="${recipe.description}">Description</td>
-			<td th:text="${recipe.prepTime}">Preparation time</td>
-			<td th:text="${recipe.cookTime}">Cook time</td>
-			<td th:text="${recipe.servings}">Servings</td>
-			<td th:text="${recipe.source}">Source</td>
-			<td th:text="${recipe.url}">URL</td>
-			<td th:text="${recipe.direction}">Direction</td>
-			<td>
-				<table>
-					<thead>
-						<tr>
-							<td style="width: 100px;">ID</td>
-							<td style="width: 100px;">Description</td>
-							<td style="width: 100px;">Amount</td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="ingredient: ${recipe.ingredients}">
-							<td th:text="${ingredient.id}">1L</td>
-							<td th:text="${ingredient.description}">Description</td>
-							<td th:text="${ingredient.amount}">Amount</td>
-						</tr>
-					</tbody>
-				</table>			
-			</td>
-			<td><img th:src="${recipe.image}" height="42"/></td>
-			<td th:text="${recipe.notes.recipeNotes}">Notes</td>
-			<td th:text="${recipe.categories}">Categories</td>
-		</tr>
-		</tbody>
-	</table>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="recipe : ${recipes}">
+        <td th:text="${recipe.id}">123</td>
+        <td th:text="${recipe.description}">Tasty Goodnees</td>
+    </tr>
+</table>
 </body>
 </html>
