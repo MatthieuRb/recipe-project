@@ -1,4 +1,4 @@
-package com.matthieurb.recipeproject;
+package guru.springframework;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class RecipeProjectApplicationTests {
+public class Spring5RecipeAppApplicationTests {
 
 	@Test
 	public void contextLoads() {
