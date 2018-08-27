@@ -3,6 +3,7 @@ package guru.springframework.domain;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Set;
 
@@ -11,6 +12,7 @@ import java.util.Set;
  */
 @Entity
 @Data
+@EqualsAndHashCode(exclude = {"recipes"})
 public class Category {
 
     @Id
