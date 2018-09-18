@@ -13,10 +13,10 @@ public interface RecipeService {
     Set<Recipe> getRecipes();
 
     Recipe findById(Long l);
-    
+
     RecipeCommand findCommandById(Long l);
 
     RecipeCommand saveRecipeCommand(RecipeCommand command);
-    
-    void deleteRecipeById(Long id);
+
+    void deleteById(Long idToDelete);
 }
